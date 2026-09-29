@@ -1,12 +1,12 @@
 ﻿# BhoomiTrack
 
 Integrated Land Acquisition Management & Monitoring System.
-Smart India Hackathon 2026, PS 26016, Team HackOps! (ID 125225).
+Smart India Hackathon 2026, Team HackOps!
 
 ## What it does
 - Officer, citizen and ministry portals with role-based login (Supabase Auth)
 - GIS map of parcels (PostGIS + Leaflet) with parcel selection and ownership lookup
-- Affected-parcel analysis from an uploaded route (Turf.js)
+- Affected-parcel analysis from an uploaded route 
 - Case tracking across survey, revenue, treasury and R&R workspaces
 
 ## Prototype status
