@@ -1,0 +1,206 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SIH26016 — Real-Time National Land Acquisition & Management System
+ * Design system (Phase 0).
+ *
+ * Direction: HYBRID — formal Government of India palette (deep indigo-navy,
+ * saffron, india-green) with modern spacing and typography for citizen
+ * readability.
+ *
+ * Rules for all later phases:
+ *  - Never hardcode colors in components. Use semantic tokens only.
+ *  - Stage, risk and data-classification colors are tokens defined here.
+ *  - `.text-scale-lg` on <html> enables the accessibility large-text mode.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Institutional identity */
+  --color-gov-navy: var(--gov-navy);
+  --color-gov-navy-foreground: var(--gov-navy-foreground);
+  --color-saffron: var(--saffron);
+  --color-saffron-foreground: var(--saffron-foreground);
+  --color-india-green: var(--india-green);
+  --color-india-green-foreground: var(--india-green-foreground);
+
+  /* Status / risk semantics */
+  --color-status-info: var(--status-info);
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-critical: var(--status-critical);
+  --color-status-neutral: var(--status-neutral);
+
+  /* Data-classification semantics (spec §7.1) */
+  --color-class-real: var(--class-real);
+  --color-class-representative: var(--class-representative);
+  --color-class-synthetic: var(--class-synthetic);
+
+  /* Portal accents */
+  --color-portal-officer: var(--portal-officer);
+  --color-portal-ministry: var(--portal-ministry);
+  --color-portal-citizen: var(--portal-citizen);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+}
+
+:root {
+  --radius: 0.5rem;
+  --font-heading: "Bitter", "Georgia", serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.22 0.03 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 260);
+
+  --primary: oklch(0.32 0.076 262);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --secondary: oklch(0.94 0.012 255);
+  --secondary-foreground: oklch(0.3 0.05 262);
+  --muted: oklch(0.955 0.008 255);
+  --muted-foreground: oklch(0.5 0.025 258);
+  --accent: oklch(0.93 0.05 80);
+  --accent-foreground: oklch(0.3 0.06 60);
+  --destructive: oklch(0.52 0.2 27);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  --border: oklch(0.9 0.012 255);
+  --input: oklch(0.9 0.012 255);
+  --ring: oklch(0.55 0.12 262);
+
+  --gov-navy: oklch(0.28 0.07 262);
+  --gov-navy-foreground: oklch(0.98 0.005 250);
+  --saffron: oklch(0.72 0.16 62);
+  --saffron-foreground: oklch(0.22 0.05 60);
+  --india-green: oklch(0.48 0.11 155);
+  --india-green-foreground: oklch(0.98 0.005 250);
+
+  --status-info: oklch(0.55 0.12 250);
+  --status-success: oklch(0.5 0.12 155);
+  --status-warning: oklch(0.68 0.15 70);
+  --status-critical: oklch(0.53 0.2 27);
+  --status-neutral: oklch(0.6 0.02 258);
+
+  --class-real: oklch(0.5 0.12 155);
+  --class-representative: oklch(0.55 0.12 250);
+  --class-synthetic: oklch(0.66 0.16 62);
+
+  --portal-officer: oklch(0.4 0.1 250);
+  --portal-ministry: oklch(0.36 0.09 300);
+  --portal-citizen: oklch(0.46 0.11 155);
+
+  --sidebar: oklch(0.26 0.06 262);
+  --sidebar-foreground: oklch(0.93 0.01 250);
+  --sidebar-accent: oklch(0.33 0.07 262);
+  --sidebar-border: oklch(0.36 0.06 262);
+}
+
+.dark {
+  --background: oklch(0.19 0.028 262);
+  --foreground: oklch(0.95 0.008 250);
+  --card: oklch(0.24 0.035 262);
+  --card-foreground: oklch(0.95 0.008 250);
+  --popover: oklch(0.24 0.035 262);
+  --popover-foreground: oklch(0.95 0.008 250);
+  --primary: oklch(0.82 0.1 70);
+  --primary-foreground: oklch(0.22 0.05 60);
+  --secondary: oklch(0.3 0.04 262);
+  --secondary-foreground: oklch(0.95 0.008 250);
+  --muted: oklch(0.29 0.035 262);
+  --muted-foreground: oklch(0.72 0.02 255);
+  --accent: oklch(0.34 0.05 262);
+  --accent-foreground: oklch(0.95 0.008 250);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.7 0.1 250);
+  --sidebar: oklch(0.22 0.035 262);
+  --sidebar-foreground: oklch(0.93 0.01 250);
+  --sidebar-accent: oklch(0.3 0.05 262);
+  --sidebar-border: oklch(1 0 0 / 12%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+
+  /* Accessibility: large-text mode (spec §11.2) */
+  html.text-scale-lg {
+    font-size: 118%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@utility gov-stripe {
+  background-image: linear-gradient(
+    90deg,
+    var(--saffron) 0%,
+    var(--saffron) 33.33%,
+    oklch(0.99 0 0) 33.33%,
+    oklch(0.99 0 0) 66.66%,
+    var(--india-green) 66.66%,
+    var(--india-green) 100%
+  );
+}
+
+@utility surface-panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
